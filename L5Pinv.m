@@ -51,7 +51,7 @@ p=inputParser;
 addRequired(p,'cf',@(x) isobject(x) || (isvector(x) && length(x)==5 && all(isnumeric(x) & isreal(x) & isfinite(x) & ~isnan(x))))
 addRequired(p,'y',@(x) validateattributes(x,{'numeric'},{'row','real','finite','nonnan','nonempty'}));
 parse(p,cf,y)
-
+clear p
 if isobject(cf)
     p=coeffvalues(cf);
 else
