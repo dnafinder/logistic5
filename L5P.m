@@ -76,19 +76,21 @@ function [cf,G]=L5P(x,y,varargin)
 %      General model:
 %      cf(x) = D+(A-D)/((1+(x/C)^B)^E)
 %      Coefficients (with 95% confidence bounds):
-%        A =   0.0009063  (-0.08996, 0.09177)
-%        B =       1.515  (0.3517, 2.678)
-%        C =         108  (-659.2, 875.3)
-%        D =       3.784  (-5.297, 12.87)
-%        E =           1  (-10.35, 12.35)
+%        A =     0.01356  (-0.02575, 0.05287)
+%        B =       1.894  (1.093, 2.694)
+%        C =       35.73  (-4.626, 76.09)
+%        D =       20.47  (-159.6, 200.5)
+%        E =     0.04276  (-0.4037, 0.4893)
 % 
 % G = 
 % 
-%            sse: 0.0012
-%        rsquare: 0.9998
+%   struct with fields:
+% 
+%            sse: 2.4749e-04
+%        rsquare: 1.0000
 %            dfe: 2
-%     adjrsquare: 0.9994
-%           rmse: 0.0245
+%     adjrsquare: 0.9999
+%           rmse: 0.0111
 %
 % hold on; plot(x,y,'ro'); plot(cf,'r'); hold off
 % this will plot the curve.
