@@ -22,7 +22,7 @@ L5Pinv - to interpolate data of unknown samples onto calibrators curve.
 Enjoy!
 
            Created by Giuseppe Cardillo
-           giuseppe.cardillo-edta@poste.it
+           giuseppe.cardillo.75@gmail.com
 
 To cite this file, this would be an appropriate format:
 Cardillo G. (2012) Five parameters logistic regression - There and back again
