@@ -1,6 +1,6 @@
 [![Open in MATLAB Online](https://www.mathworks.com/images/responsive/global/open-in-matlab-online.svg)](https://matlab.mathworks.com/open/github/v1?repo=dnafinder/logistic5)
 
-📘 Overview
+##📘 Overview
 logistic5 is a MATLAB toolbox implementing the Five-Parameter Logistic (5PL) regression model, an extension of the widely used 4PL model in immunoassays, dose-response analysis, and bioassay standard curve fitting. The additional parameter E introduces asymmetry into the sigmoid curve, enabling more flexible modeling of real-world biological data where the curve is not perfectly symmetrical around its inflection point.
 
 The 5PL model is defined as:
@@ -17,7 +17,7 @@ This repository provides two key functions:
 - L5P    : Performs 5PL curve fitting using nonlinear least squares
 - L5Pinv : Computes the inverse of the 5PL model, estimating concentrations from response values
 
-✨ Features
+##✨ Features
 - Robust nonlinear regression of 5PL curves
 - Automatic detection of initial parameter estimates when not supplied
 - Bounds for parameters automatically chosen based on data if not provided
@@ -26,7 +26,7 @@ This repository provides two key functions:
 - Includes full inverse evaluation for interpolation/extrapolation
 - Suitable for assays requiring asymmetric sigmoid fitting, including biochemical, pharmacological, and immunological workflows
 
-📥 Installation
+##📥 Installation
 1. Download or clone the repository:
    https://github.com/dnafinder/logistic5
 
@@ -37,11 +37,11 @@ This repository provides two key functions:
       which L5P
       which L5Pinv
 
-⚙️ Requirements
+##⚙️ Requirements
 - MATLAB (any recent version)
 - Curve Fitting Toolbox (required for fit, fittype, cfit models)
 
-📈 Usage
+##📈 Usage
 Fitting a 5PL curve:
 
     x = [0; 4.5; 10.6; 19.7; 40; 84; 210];
@@ -66,7 +66,7 @@ Using explicit parameters instead of a cfit object:
     params = [A, B, C, D, E];
     x_est = L5Pinv(params, yq);
 
-🔢 Inputs
+##🔢 Inputs
 L5P(x, y)
 L5P(x, y, st)
 L5P(x, y, st, L, U)
@@ -81,7 +81,7 @@ L5Pinv(cf, y)
 - cf : cfit object from L5P OR numeric vector [A B C D E]
 - y  : Query response values (any shape)
 
-📤 Outputs
+##📤 Outputs
 L5P returns:
 - cf : cfit object for the fitted 5PL curve
 - G  : Structure containing sse, rsquare, adjrsquare, rmse, dfe
@@ -89,7 +89,7 @@ L5P returns:
 L5Pinv returns:
 - x : Interpolated concentration values corresponding to y
 
-🧠 Interpretation
+##🧠 Interpretation
 - E introduces curve asymmetry; E > 1 bends the curve in one direction, E < 1 in the opposite direction
 - B controls the steepness of the curve, positive or negative
 - C represents the EC50 and defines where the curve transitions most rapidly
@@ -98,22 +98,22 @@ L5Pinv returns:
   • Low RMSE and SSE  
   • Visually coherent sigmoidal shape following experimental points  
 
-📌 Notes
+##📌 Notes
 - When providing replicates (matrix y), L5P automatically computes row means and uses standard deviations as weights.
 - Good starting values and reasonable parameter bounds can improve convergence.
 - Values of y equal to A or D cannot be inverted directly; L5Pinv will warn about extrapolation.
 
-🧾 Citation
+##🧾 Citation
 If you use logistic5 in research, analysis, or publications, please cite:
 
 Cardillo G. (2025). logistic5: Five-parameter logistic regression tools in MATLAB (L5P and L5Pinv).  
 Available at: https://github.com/dnafinder/logistic5
 
-👤 Author
+##👤 Author
 Giuseppe Cardillo  
 Email: giuseppe.cardillo.75@gmail.com  
 GitHub: https://github.com/dnafinder
 
-📄 License
+##📄 License
 logistic5 is distributed under the terms specified in the LICENSE file:  
 https://github.com/dnafinder/logistic5
